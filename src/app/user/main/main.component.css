@@ -1,0 +1,23 @@
+
+
+.left {
+    width: 275px;
+    height: 100vh;
+    bottom: 0;
+    
+   
+    background-color:#4EA685 ;
+    padding: 20px;
+    color: white;
+    position: fixed;
+}
+
+.right{
+    margin-left: 263px;
+     height: 100vh;
+
+}
+
+
+
+

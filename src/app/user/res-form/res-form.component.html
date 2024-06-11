@@ -1,0 +1,57 @@
+<div class="overlay" id="overlay"></div>
+<div class="popup" id="popup">
+    <div class="popup-header">
+        <h1>Valider La Reservation</h1>
+    </div>
+    <div class="popup-body">
+        <form id="reservation-form" [formGroup]="reservationForm">
+            <div class="row">
+                <div class="col-6">
+                    <label for="date">Date </label>
+                    <input type="text" formControlName="date_res" class="form-control form-control-sm" readonly>
+                </div>
+                <div class="col-6">
+                    <label for="time">Temps </label>
+                    <input type="text" formControlName="temps"  class="form-control form-control-sm" readonly>
+                </div>
+                
+            
+                <div class="col-6">
+                    <label>Nombre Joueurs</label>
+                    <select  class="form-control form-control-sm" formControlName="nbjoueurs" (click)="changerTarif()">
+                        <option value="10" >10</option>
+                        <option value="12" selected >12</option>
+                        <option value="14" >14</option>
+                    </select>
+                </div>
+
+                
+                
+
+               
+
+                <div class="col-6"  >
+                
+                    <label> Avec eau</label>
+                <div class="checkbox-wrapper-17 " >
+                    
+                    
+                  <input (change)="changerTarif()" type="checkbox" id="switch-17" formControlName="eau"/><label for="switch-17"></label>
+            </div>
+            </div>
+
+            <div class="col-3"></div>
+            <div class="col-6" style="text-align: center;">
+                <label for="tarif">Tarif par personne (DT)</label> <input type="number" formControlName="tarif" readonly class="form-control form-control">
+            </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="popup-footer">
+        <div class="button-container">
+            <button type="submit" form="reservation-form" (click)="ajouter()">Valider</button>
+        </div>
+    </div>
+    
+</div>

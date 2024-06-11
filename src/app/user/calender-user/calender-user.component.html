@@ -1,0 +1,28 @@
+<div class="container-cal">
+    <a routerLink="/main/reservation"><i class="fa-regular fa-circle-xmark fa-xl icon"></i></a>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th><i class="fas fa-soccer-ball fa-xl"></i></th>
+                    <th *ngFor="let date of dates">{{ date | date:"dd/MM/yyyy"}}</th>
+                  </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of calendrier">
+                    <th>{{t.time}}</th>
+                    <td *ngFor="let date of dates" >
+                        <button class="btn" *ngIf="!isDateInList(date, t.dates)" (click)="openDialol(t.time,date)">
+                            <i class="fa-regular fa-calendar-plus fa-xl" ></i>
+                                                </button>
+                        <button class="btn" *ngIf="isDateInList(date, t.dates)" >
+                            <i class="fa-sharp fa-solid fa-lock fa-xl" style="color: red;"></i>
+                        </button>
+
+                    </td>
+
+                </tr>  
+            </tbody>
+        </table>
+    </div>
+</div>

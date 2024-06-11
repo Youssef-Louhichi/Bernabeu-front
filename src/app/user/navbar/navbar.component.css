@@ -1,0 +1,35 @@
+
+  
+  #sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #sidebar ul li {
+    margin: 10% 10%;  
+      font-size: large;
+    font-weight: bold;
+  }
+  
+  .link {
+    text-decoration: none;
+    cursor: pointer;
+    color: aliceblue;
+  }
+  
+  #sidebar ul li a:hover {
+    color: yellow;
+  }
+  
+  #sidebar img {
+    display: block;
+    margin: 20px auto; /* Center the image horizontally and add space around it */
+    max-width: 100px; /* Limit the image width to 80% of the container */
+    height: auto;
+  }
+
+  .active{
+    color: yellow;
+  }
+  

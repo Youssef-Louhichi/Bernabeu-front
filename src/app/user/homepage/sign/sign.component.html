@@ -1,0 +1,122 @@
+<div id="container" class="container-sg" [ngClass]="{'sign-in': isSignIn, 'sign-up': !isSignIn}">
+    <!-- FORM SECTION -->
+    <div class="row-sg">
+        <!-- SIGN UP -->
+        <div class="col align-items-center flex-col sign-up">
+            <div class="form-wrapper align-items-center">
+                <form [formGroup]="clientForm">
+
+                    <div class="form sign-up">
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" class="input-nos" placeholder="Nom" formControlName="nom" required>
+                            <i class='bx bx-mail-send'></i>
+                            <input type="text" class="input-nos" placeholder="Prenom" formControlName="prenom">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="email" class="input-large" placeholder="E-mail" formControlName="email">
+                            <span style="color: red;" *ngIf="isValidMail()">*Email incorrecte</span>
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" class="input-large" placeholder="Téléphone" formControlName="tel">
+                            <span style="color: red;" *ngIf="isValidNum()">*Numéro téléphone incorrecte</span>
+                            </div>
+                            <div>
+                            <i class='bx bx-mail-send'></i>
+                            <input type="date" class="input-large" formControlName="date_naissance">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="password" class="input-large" placeholder="Mot de passe" formControlName="mdp">
+                            <span style="color: red;" *ngIf="isValidpwd1()">*Mot de passe doit contenir 8 caractéres au minimum</span>
+                            <span style="color: red;" *ngIf="isValidpwd2()">*Mot de passe doit contenir des caractére alphabétique et numérique </span>
+
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bx-mail-send'></i>
+                            <input type="password" class="input-large" placeholder="Confirmer mot de passe" #pwd>
+                            <span style="color: red;" *ngIf="AlertMdp">*Mot de passe incompatible</span>
+
+                        </div>
+                        <button (click)="signup(pwd.value)" [disabled]="clientForm.invalid">
+                            Sign up
+                        </button>
+                        <p>
+                            <span>
+                                Already have an account?
+                            </span>
+                            <b (click)="toggle()" class="pointer">
+                                Sign in here
+                            </b>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SIGN UP -->
+        <!-- SIGN IN -->
+        <div class="col align-items-center flex-col sign-in">
+            <div class="form-wrapper align-items-center">
+                <form [formGroup]="log">
+                    <div class="form sign-in">
+                        <div class="input-group">
+                            <i class='bx bxs-user'></i>
+                            <input type="text" class="input-large" placeholder="login" formControlName="login">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt'></i>
+                            <input type="password" class="input-large" placeholder="Password" formControlName="pwd">
+                        </div>
+                        <button (click)="login()" [disabled]="log.invalid">
+                            Sign in
+                        </button>
+                        <p>
+                            <b>
+                                Forgot password?
+                            </b>
+                        </p>
+                        <p>
+                            <span>
+                                Don't have an account?
+                            </span>
+                            <b (click)="toggle()" class="pointer">
+                                Sign up here
+                            </b>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END SIGN IN -->
+    </div>
+    <!-- END FORM SECTION -->
+    <!-- CONTENT SECTION -->
+    <div class="row-sg content-row">
+        <!-- SIGN IN CONTENT -->
+        <div class="col align-items-center flex-col" style="margin-bottom: 0;">
+            <div class="text sign-in">
+                <h2>
+                    Welcome
+                </h2>
+                <div class="img sign-in" style="margin-top: 0;">
+                    <img src="assets/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- END SIGN IN CONTENT -->
+        <!-- SIGN UP CONTENT -->
+        <div class="col align-items-center flex-col">
+            <div class="img sign-up">
+            </div>
+            <div class="text sign-up">
+                <h2>
+                    Join us
+                </h2>
+            </div>
+        </div>
+        <!-- END SIGN UP CONTENT -->
+    </div>
+    <!-- END CONTENT SECTION -->
+</div>

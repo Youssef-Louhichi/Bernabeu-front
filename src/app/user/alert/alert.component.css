@@ -1,0 +1,15 @@
+.error-msg {
+    color: #D8000C;
+    background-color: #FFBABA;
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+  }
+
+  .success-msg {
+    color: #270;
+    background-color: #DFF2BF;
+    padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+  }
+
+  i{cursor: pointer;}

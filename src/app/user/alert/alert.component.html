@@ -1,0 +1,11 @@
+
+
+<div class="error-msg"  *ngIf="data.index==1">
+    <i class="fa fa-times-circle" (click)="close()"></i>
+    {{data.message}}
+  </div>
+
+  <div class="success-msg"  *ngIf="data.index==2">
+    <i class="fa fa-check" (click)="close()"></i>
+    {{data.message}}
+  </div>

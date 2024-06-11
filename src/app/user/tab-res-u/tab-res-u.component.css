@@ -1,0 +1,167 @@
+.avatar-lg {
+    height: 5rem;
+    width: 5rem;
+}
+
+.container {
+    padding: 5%;
+    height: 100vh;
+}
+
+.reservations-container {
+    height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
+}
+
+.reservations-container::-webkit-scrollbar {
+    display: none; 
+}
+
+
+
+.bg {
+    background-image: url(/assets/cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.bg-fade{
+    background-color: rgba(255, 255, 255, 0.25);
+    height: 100%;
+
+
+}
+
+.font-size-18 {
+    font-size: 18px!important;
+}
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+.w-xl {
+    min-width: 160px;
+}
+
+.card {
+    margin-bottom: 24px;
+    -webkit-box-shadow: 0 2px 3px #e4e8f0;
+    box-shadow: 0 2px 3px #e4e8f0;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, 0.93); 
+    background-clip: border-box;
+    border: 1px solid #eff0f2;
+    border-radius: 1rem;
+}
+
+
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.rating-container{
+    float: right;
+}
+
+
+
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none;
+}
+
+.profile-button:hover {
+    background: #682773;
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none;
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none;
+}
+
+
+
+.table1 {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.table1 th,
+.table1 td {
+    padding: 0.75rem;
+    vertical-align: top;
+}
+
+.table1 thead th {
+    vertical-align: bottom;
+}
+
+
+
+
+
+
+

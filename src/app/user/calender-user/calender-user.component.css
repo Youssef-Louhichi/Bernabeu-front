@@ -1,0 +1,103 @@
+
+
+.container-cal {
+	margin: 0;
+    background-image: url(/assets/cover.jpg);
+	background-repeat: no-repeat;
+	height: auto;
+    background-size: 100%;
+
+	font-family: sans-serif;
+	font-weight: 100;
+    height: 100%;
+
+    position: relative;
+    width: 100%;
+
+        
+
+    
+
+    box-sizing: border-box;
+}
+
+.icon{
+	position: relative;
+	top: 1%;
+	left: 1%;
+	color: white;
+}
+.icon:hover{
+	color: red;
+}
+
+
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+
+	width: 50vw;
+    margin:0 10%;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: center;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+      
+	}
+}
+
+tbody {
+
+    th {
+		background-color: #55608f;
+	}
+
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+        text-align: center;
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+
+	i{
+		-webkit-text-stroke: 1px black; /* Stroke width and color */
+		text-stroke: 1px black; /* Fallback for other browsers */
+	}
+}
+

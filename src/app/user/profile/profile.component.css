@@ -1,0 +1,75 @@
+.form-control:focus {
+    box-shadow: none;
+    border-color: #BA68C8;
+}
+
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none;
+}
+
+.profile-button:hover {
+    background: #682773;
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none;
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none;
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer;
+}
+
+.labels {
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+ input{
+    margin-top:2%;
+    margin-bottom: 5%;
+    
+}
+
+.bg{
+    background-image: url(/assets/cover.jpg);
+	background-repeat: no-repeat;
+	height: 100%;
+    background-size: 100%;
+    
+}
+
+.bg-fade{
+    background-color: rgba(255, 255, 255, 0.25);
+    height: 100%;
+
+
+}
+
+img{
+    border: 2px white solid;
+}
+
+span{
+    color: #ffffff;
+}
+h2{
+    color: #ffffff;
+}
+
+
+
+
+.middle-column {
+    border-left: 1px solid #ffffff; 
+}
+
