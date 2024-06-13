@@ -84,9 +84,14 @@ export class ResFormComponent implements OnInit {
 
   }
 
+  addHoursToDate(date: Date, hours: number): Date {
+    let newDate = new Date(date);
+    newDate.setHours(newDate.getHours() + hours);
+    return newDate;
+  }
+
   ajouter() {
-    console.log(this.reservationForm.value)
-    this.reservationForm.get("date_res")?.setValue(this.d)
+    this.reservationForm.get("date_res")?.setValue(this.addHoursToDate(this.d,5))
     this.reservationservice.addReservation(this.reservationForm.value).subscribe(res => {
       if (res) {
         this.dialogRef.close()

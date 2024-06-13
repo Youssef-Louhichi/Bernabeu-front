@@ -93,7 +93,6 @@ export class SignComponent  implements OnInit {
     if(pwd!=cpwd )
       this.AlertMdp=true
     else{
-    console.log(this.clientForm.value)
     this.clientservice.addClient(this.clientForm.value).subscribe(
       res =>{
         if (res){

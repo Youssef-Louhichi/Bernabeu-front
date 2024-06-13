@@ -16,7 +16,8 @@ export class AnnulerReservationComponent {
     if(x==1){
       
       this.reservationservice.annuleReservation(this.id).subscribe(res=>{
-        console.log(res)
+        this.dialogRef.close(res)
+
       })
     }
     this.dialogRef.close( )

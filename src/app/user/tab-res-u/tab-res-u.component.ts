@@ -62,6 +62,12 @@ export class TabResUComponent implements OnInit {
   annuler(id: number) {
     this.dialog.open(AnnulerReservationComponent, {
       data: id
+    }).afterClosed().subscribe(res => {
+      if (res) {
+        this.reservations = this.reservations.filter(r => r.idRes != res.idRes)
+        this.reservations.push(res)
+        this.reservations.sort((a, b) => a.date_res < b.date_res ? 1 : -1);
+      }
     });
   }
 }
