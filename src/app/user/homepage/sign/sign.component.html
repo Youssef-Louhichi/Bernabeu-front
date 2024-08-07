@@ -1,6 +1,8 @@
 <div id="container" class="container-sg" [ngClass]="{'sign-in': isSignIn, 'sign-up': !isSignIn}">
     <!-- FORM SECTION -->
     <div class="row-sg">
+        <app-spinner *ngIf="isLoading"></app-spinner>
+
         <!-- SIGN UP -->
         <div class="col align-items-center flex-col sign-up">
             <div class="form-wrapper align-items-center">

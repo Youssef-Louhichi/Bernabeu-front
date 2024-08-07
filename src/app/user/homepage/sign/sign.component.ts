@@ -12,6 +12,7 @@ export class SignComponent  implements OnInit {
   constructor(private fb: FormBuilder,private route: Router,private clientservice:ClientService) { }
 
   clientForm!: FormGroup
+  isLoading=false
   log!: FormGroup
   isSignIn: boolean = true
   AlertMdp:boolean=false
@@ -72,10 +73,15 @@ export class SignComponent  implements OnInit {
   login(){
 
     this.clientservice.login(this.log.get("login")?.value,this.log.get("pwd")?.value).subscribe(res =>{
+      this.isLoading=true
       if (res){
         localStorage.setItem("idCl",res.idCl)
         localStorage.setItem("state","connectedUser")
         this.route.navigate(["/main"])
+      }
+      else{
+        this.isLoading=false
+
       }
 
 
@@ -95,10 +101,14 @@ export class SignComponent  implements OnInit {
     else{
     this.clientservice.addClient(this.clientForm.value).subscribe(
       res =>{
+        this.isLoading=true;
         if (res){
           localStorage.setItem("idCl",res.idCl)
           localStorage.setItem("state","connectedUser")
           this.route.navigate(["/main"])
+        }
+        else{
+          this.isLoading=false
         }
       }
     )
