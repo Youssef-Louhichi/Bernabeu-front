@@ -71,9 +71,10 @@ export class SignComponent  implements OnInit {
   }
 
   login(){
+    this.isLoading=true
+
 
     this.clientservice.login(this.log.get("login")?.value,this.log.get("pwd")?.value).subscribe(res =>{
-      this.isLoading=true
       if (res){
         localStorage.setItem("idCl",res.idCl)
         localStorage.setItem("state","connectedUser")
@@ -92,6 +93,7 @@ export class SignComponent  implements OnInit {
   }
 
   signup(cpwd:string){
+    this.isLoading=true;
 
     let pwd=this.clientForm.get("mdp")?.value;
 
@@ -101,7 +103,6 @@ export class SignComponent  implements OnInit {
     else{
     this.clientservice.addClient(this.clientForm.value).subscribe(
       res =>{
-        this.isLoading=true;
         if (res){
           localStorage.setItem("idCl",res.idCl)
           localStorage.setItem("state","connectedUser")

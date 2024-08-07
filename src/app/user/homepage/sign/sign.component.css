@@ -296,3 +296,8 @@
         font-size: 2rem;
     }
 }
+.spinner{position: absolute;
+    z-index: 99999;
+    top:50%;
+    right:50%
+    }
