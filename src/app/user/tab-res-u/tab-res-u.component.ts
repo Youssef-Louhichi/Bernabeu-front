@@ -74,6 +74,7 @@ export class TabResUComponent implements OnInit {
         this.reservations = this.reservations.filter(r => r.idRes != res.idRes)
         this.reservations.push(res)
         this.reservations.sort((a, b) => a.date_res < b.date_res ? 1 : -1);
+        this.reservationsAfficher=this.reservations
       }
     });
   }
