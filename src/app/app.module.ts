@@ -20,6 +20,7 @@ import { AddFeedbackComponent } from './user/add-feedback/add-feedback.component
 import { AnnulerReservationComponent } from './user/annuler-reservation/annuler-reservation.component';
 import {HttpClientModule} from "@angular/common/http";
 import { AlertComponent } from './user/alert/alert.component';
+import { SpinnerComponent } from './composant/spinner/spinner.component';
 
 
 registerLocaleData(localeFr);
@@ -37,7 +38,8 @@ registerLocaleData(localeFr);
     TabResUComponent,
     AddFeedbackComponent,
     AnnulerReservationComponent,
-    AlertComponent
+    AlertComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

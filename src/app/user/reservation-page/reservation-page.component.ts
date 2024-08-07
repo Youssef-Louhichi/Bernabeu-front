@@ -15,6 +15,8 @@ export class ReservationPageComponent implements OnInit {
   constructor(private terrainservice: TerrainService, private router: Router) { }
 
   terrains!: Terrain[];
+  isLoading=true;
+
 
 
   ngOnInit(): void {
@@ -22,7 +24,9 @@ export class ReservationPageComponent implements OnInit {
   }
 
   inisializeTerrain(){
-    this.terrainservice.getTerrains().subscribe(res => this.terrains = res)
+    this.terrainservice.getTerrains().subscribe(res => {this.terrains = res
+      this.isLoading=false;
+    })
   }
 
   goToCalendrier(id: number) {

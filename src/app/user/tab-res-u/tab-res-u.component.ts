@@ -15,7 +15,11 @@ export class TabResUComponent implements OnInit {
 
   constructor(private dialog: MatDialog, private reservationservice: ReservationService) { }
   reservations!: Reservation[]
+  reservationsAfficher!: Reservation[]
+
   today = new Date()
+  isLoading=true;
+
 
 
   ngOnInit(): void {
@@ -24,7 +28,10 @@ export class TabResUComponent implements OnInit {
 
   inisializeReservation(){
     this.reservationservice.getReservationsByClient(Number(localStorage.getItem("idCl"))).subscribe(res => {
+      this.isLoading=false;
+
       this.reservations = res.sort((a, b) => a.date_res < b.date_res ? 1 : -1);
+      this.reservationsAfficher=this.reservations.filter(r => r.done == false && r.annule == false)
     })
   }
 
@@ -69,5 +76,15 @@ export class TabResUComponent implements OnInit {
         this.reservations.sort((a, b) => a.date_res < b.date_res ? 1 : -1);
       }
     });
+  }
+
+  AfficherList(x:number){
+    if(x==1){
+      this.reservationsAfficher=this.reservations.filter(r => r.done == false && r.annule == false)
+      return
+    }
+    if (x==2){
+      this.reservationsAfficher=this.reservations
+    }
   }
 }

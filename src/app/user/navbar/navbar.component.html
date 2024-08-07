@@ -1,4 +1,4 @@
-<div id="sidebar">
+<div id="navbar" class="over700">
     <div>
     <img src="assets/logo.png" id="imglogo">
     <ul class="list-group">
@@ -8,4 +8,16 @@
     <li><a class="link" (click)="Logout()"> <i class="fas fa-sign-out-alt"></i> Logout</a></li>
 </ul>
 </div>
+</div>
+
+<div id="navbar" class="under700">
+    <div>
+        <ul class="list-group">
+            <li><a routerLink="/main/reservation" routerLinkActive="active" class="link"><i class="fas fa-soccer-ball"></i> </a></li>
+            <li><a routerLink="/main/mesres" routerLinkActive="active" class="link"> <i class="fas fa-clipboard-list"></i> </a></li>
+            <img src="assets/logo.png" id="imglogo">
+            <li><a routerLink="/main/profil" routerLinkActive="active" class="link"><i class="fas fa-user"></i></a></li>
+            <li><a class="link" (click)="Logout()"> <i class="fas fa-sign-out-alt"></i></a></li>
+        </ul>
+    </div>
 </div>

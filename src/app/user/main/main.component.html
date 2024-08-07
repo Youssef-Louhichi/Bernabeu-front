@@ -1,14 +1,22 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col left ">
-
-            <app-navbar></app-navbar>
+<div class="over700" *ngIf="!isMobile">
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col left ">
+    
+                <app-navbar></app-navbar>
+            </div>
+    
+            <div class="col right ">
+                <router-outlet></router-outlet>
+            </div>
+    
         </div>
-
-        <div class="col right ">
-            <router-outlet></router-outlet>
-        </div>
-
+    
     </div>
-
-</div>
+    </div>
+    
+    
+    <div class="under700" *ngIf="isMobile">
+        <app-navbar></app-navbar>
+        <router-outlet></router-outlet>
+    </div>

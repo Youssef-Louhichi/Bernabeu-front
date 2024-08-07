@@ -18,6 +18,8 @@ export class ProfileComponent implements OnInit {
   AlertMdp1: boolean = false
   AlertMdp2: boolean = false
   client!: Client
+  isLoading=true;
+
 
   clientForm: FormGroup = this.fb.group({
     idCl: [, Validators.required],
@@ -46,6 +48,8 @@ export class ProfileComponent implements OnInit {
 
   initializeClient(){
     this.clientservice.getClientById(Number(localStorage.getItem("idCl"))).subscribe(res => {
+      this.isLoading=false;
+
       this.client = res
       this.clientForm.setValue({
         idCl: this.client.idCl,

@@ -1,8 +1,19 @@
-<div class="container bg" style="height: 100%;">
+<div class="bg" >
 
-    <div class="row ">
-        <div class="col-xl-8 reservations-container" *ngIf="reservations">
-            <div class="card border shadow-none" *ngFor="let r of reservations">
+    <app-spinner *ngIf="isLoading"></app-spinner>
+
+  <div class="row " *ngIf="!isLoading">
+        <div class="col-xl-8">
+            <div class="et-hero-tabs-container">
+                <a class="et-hero-tab"  (click)="AfficherList(2)">Tout réservations</a>
+                <a class="et-hero-tab" (click)="AfficherList(1)">Prochaines réservations</a>
+                <span class="et-hero-tab-slider"></span>
+              </div>
+        </div>
+        <div class="col-xl-8 reservations-container" *ngIf="reservationsAfficher">
+            
+            
+            <div class="card border shadow-none" *ngFor="let r of reservationsAfficher">
                 <div class="card-body">
                     <div class="d-flex align-items-start border-bottom pb-3">
                         <div class="flex-grow-1 align-self-center overflow-hidden">
@@ -84,10 +95,14 @@
                     </div>
                 </div>
             </div>
+            <div *ngIf="reservationsAfficher.length==0" style="font-size: large;text-align: center;margin-top: 3rem;">
+                Aucune reservations
+            </div>
         </div>
+        
         <div class="col-xl-4">
             <div class="mt-5 mt-lg-0">
-                <div class="card border shadow-none">
+                <div class="card-hist border shadow-none">
                     <div class="card-header bg-transparent border-bottom py-3 px-4">
                         <h5 class="font-size-16 mb-0" style="text-align: center;">Historique</h5>
                     </div>
@@ -96,7 +111,7 @@
                             <table class="table1 mb-0">
                                 <tbody>
                                     <tr>
-                                        <th>Nombre de reservations :</th>
+                                        <th>Nombre des reservations :</th>
                                         <td class="text-end">
                                             <span class="fw-bold" *ngIf="reservations">{{reservations.length}}</span>
                                         </td>

@@ -1,29 +1,28 @@
 <div class="container-res">
-    <div class="container">
-        <h1 class="title">Le Paradis du Football </h1>
-        <div class="card-container">
-            <ng-container *ngFor="let t of terrains,index as i">
-                <div class="card" (click)="goToCalendrier(t.idTer)" *ngIf="t.dispo">
-                    <div class="card-inner">
-                        <div class="card-front">
-                            <img [src]="t.url" alt="Terrain">
-                            <div class="terrain-name">
-                                <h3>Terrain {{i+1}}</h3>
-                            </div>
+    <h1 class="title">Le Paradis du Football </h1>
+    <app-spinner *ngIf="isLoading"></app-spinner>
+    <div class="card-container" *ngIf="!isLoading">
+        <ng-container *ngFor="let t of terrains,index as i">
+            <div class="card" (click)="goToCalendrier(t.idTer)" *ngIf="t.dispo">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img [src]="t.url" alt="Terrain">
+                        <div class="terrain-name">
+                            <h3>Terrain {{i+1}}</h3>
                         </div>
-                        <div class="card-back">
-                            <img [src]="t.url" alt="Terrain">
-                            <div class="details">
-                                <h3>Terrain {{t.type}}</h3>
-                                <p>Prix:{{t.prix}}</p>
-                                <span>Largeur:{{t.largeur}}</span><span> Longeur:{{t.longeur}}</span>
+                    </div>
+                    <div class="card-back">
+                        <img [src]="t.url" alt="Terrain">
+                        <div class="details">
+                            <h3>Terrain {{t.type}}</h3>
+                            <p>Prix:{{t.prix}}</p>
+                            <span>Largeur:{{t.largeur}}</span><span> Longeur:{{t.longeur}}</span>
 
-                            </div>
                         </div>
                     </div>
                 </div>
-            </ng-container>
+            </div>
+        </ng-container>
 
-        </div>
     </div>
 </div>

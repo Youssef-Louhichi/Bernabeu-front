@@ -19,6 +19,7 @@ export class CalenderUserComponent implements OnInit {
   dates: Date[] = [];
   reservations!: Reservation[]
   reservationsclient!: Reservation[]
+  isLoading:boolean=true
 
   calendrier: { time: string, dates: Date[] }[] = [
     { time: "14:00", dates: [] },
@@ -49,6 +50,8 @@ export class CalenderUserComponent implements OnInit {
     this.reservationservice.getReservationsByTerrainAndDates(id,this.dates[0],this.dates[6]).subscribe(res => {
 
       this.reservations = res
+      this.isLoading=false;
+
 
       for (let r of this.reservations) {
         const timeEntry = this.calendrier.find(t => t.time === r.temps);

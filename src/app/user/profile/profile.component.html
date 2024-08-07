@@ -1,80 +1,81 @@
-<div class="bg" *ngIf="client">
-    <div class="row bg-fade">
-      <div class="col-md-3 border-right ">
-        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-          <img class="rounded-circle mt-5" width="150px"  src="assets/avatar.png">
-          <br>
-          <span class="font-weight-bold">{{ client.nom }}</span>
-          <span class="text-50">{{ client.email }}</span>
-          <span></span>
-        </div>
-      </div>
-      <div class="col-md-5 border-right">
-        <div class="p-3 py-5">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="text-right">Profile</h2>
-          </div>
-          <form [formGroup]="clientForm">
-            <div class="row mt-2 middle-column">
-              <div class="col-md-6">
-                <label class="labels">Nom</label>
-                <input type="text" class="form-control" formControlName="nom">
-              </div>
-              <div class="col-md-6">
-                <label class="labels">Prenom</label>
-                <input type="text" class="form-control" formControlName="prenom">
-              </div>
-            </div>
-            <div class="row mt-3 middle-column">
-              <div class="col-md-12">
-                <label class="labels">Mobile Number</label>
-                <input type="text" class="form-control" formControlName="tel">
-              </div>
-              <div class="col-md-12">
-                <label class="labels">Email</label>
-                <input type="text" class="form-control" formControlName="email">
-              </div>
-              <div class="col-md-12">
-                <label class="labels">Date de naissance</label>
-                <input type="date" class="form-control" formControlName="date_naissance">
-              </div>
-            </div>
-            <div class="mt-5 text-center">
-              <button class="btn btn-primary profile-button" type="button" [disabled]="!clientForm.dirty" (click)="modifier()">Enregistrer</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="p-3 py-5">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h2 class="text-right">Mot de passe</h2>
-          </div>
-          <form [formGroup]="mdpForm">
+<div class="bg" >
+  <app-spinner *ngIf="isLoading"></app-spinner>
 
+  <div class="row " *ngIf="!isLoading">
+    <div class="col-md-3 border-right ">
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+        <img class="rounded-circle mt-5" width="150px"  src="assets/avatar.png">
+        <br>
+        <span class="font-weight-bold">{{ client.nom }}</span>
+        <span class="text-50">{{ client.email }}</span>
+        <span></span>
+      </div>
+    </div>
+    <div class="col-md-5 ">
+      <div class="p-3 py-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="text-right">Profile</h2>
+        </div>
+        <form [formGroup]="clientForm">
+          <div class="row mt-2 middle-column">
+            <div class="col-md-6">
+              <label class="labels">Nom</label>
+              <input type="text" class="form-control" formControlName="nom">
+            </div>
+            <div class="col-md-6">
+              <label class="labels">Prenom</label>
+              <input type="text" class="form-control" formControlName="prenom">
+            </div>
+          </div>
           <div class="row mt-3 middle-column">
             <div class="col-md-12">
-              <label class="labels">Nouveau mot de passe</label>
-              <input type="password" class="form-control" placeholder="Nouveau mot de passe" formControlName="nouveauMdp">
+              <label class="labels">Mobile Number</label>
+              <input type="text" class="form-control" formControlName="tel">
             </div>
             <div class="col-md-12">
-              <label class="labels">Confirmer nouveau mot de passe</label>
-              <input type="password" class="form-control" placeholder="Confirmer nouveau mot de passe" formControlName="confirmerMdp">
-              <span style="color: red;" *ngIf="AlertMdp1">Mot de passe incompatible</span>
-
+              <label class="labels">Email</label>
+              <input type="text" class="form-control" formControlName="email">
             </div>
             <div class="col-md-12">
-              <label class="labels">Ancien mot de passe</label>
-              <input type="password" class="form-control" placeholder="Ancien mot de passe" formControlName="ancienMdp">
-              <span style="color: red;" *ngIf="AlertMdp2">Mot de passe incorrecte</span>
+              <label class="labels">Date de naissance</label>
+              <input type="date" class="form-control" formControlName="date_naissance">
             </div>
           </div>
           <div class="mt-5 text-center">
-            <button class="btn btn-primary profile-button" type="button" [disabled]="mdpForm.invalid" (click)="changerPwd()">Changer mot de passe</button>
+            <button class="btn btn-primary profile-button" type="button" [disabled]="!clientForm.dirty" (click)="modifier()">Enregistrer</button>
           </div>
-          </form>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-3 py-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="text-right">Mot de passe</h2>
         </div>
+        <form [formGroup]="mdpForm">
+
+        <div class="row mt-3 middle-column">
+          <div class="col-md-12">
+            <label class="labels">Nouveau mot de passe</label>
+            <input type="password" class="form-control" placeholder="Nouveau mot de passe" formControlName="nouveauMdp">
+          </div>
+          <div class="col-md-12">
+            <label class="labels">Confirmer nouveau mot de passe</label>
+            <input type="password" class="form-control" placeholder="Confirmer nouveau mot de passe" formControlName="confirmerMdp">
+            <span style="color: red;" *ngIf="AlertMdp1">Mot de passe incompatible</span>
+
+          </div>
+          <div class="col-md-12">
+            <label class="labels">Ancien mot de passe</label>
+            <input type="password" class="form-control" placeholder="Ancien mot de passe" formControlName="ancienMdp">
+            <span style="color: red;" *ngIf="AlertMdp2">Mot de passe incorrecte</span>
+          </div>
+        </div>
+        <div class="mt-5 text-center">
+          <button class="btn btn-primary profile-button" type="button" [disabled]="mdpForm.invalid" (click)="changerPwd()">Changer mot de passe</button>
+        </div>
+        </form>
       </div>
     </div>
   </div>
-  
+</div>

@@ -1,12 +1,18 @@
+.over700{
+  display: flex;
+}
 
+.under700{
+  display: none;
+}
   
-  #sidebar ul {
+  #navbar ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
   
-  #sidebar ul li {
+  #navbar ul li {
     margin: 10% 10%;  
       font-size: large;
     font-weight: bold;
@@ -18,11 +24,11 @@
     color: aliceblue;
   }
   
-  #sidebar ul li a:hover {
+  #navbar ul li a:hover {
     color: yellow;
   }
   
-  #sidebar img {
+  #navbar img {
     display: block;
     margin: 20px auto; /* Center the image horizontally and add space around it */
     max-width: 100px; /* Limit the image width to 80% of the container */
@@ -31,5 +37,63 @@
 
   .active{
     color: yellow;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .over700{
+      display: none;
+    }
+  
+  
+  .under700{
+    display: flex;
+  }
+    #navbar {
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      background-color: #4EA685;
+      padding-top: 0;
+      padding-left: 0;
+      height:10%;
+      width:100%;
+    }
+    
+    #navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: row;  
+      align-items: center;
+    }
+    
+    #navbar ul li {
+      margin-right : 5%;  
+      margin-left: 5%;
+
+      font-size:  15px;
+      width: 50px;;
+      font-weight: bold;
+    }
+    
+    .link {
+      text-decoration: none;
+      cursor: pointer;
+      color: aliceblue;
+    }
+    
+    #navbar ul li a:hover {
+      color: yellow;
+    }
+    
+    #navbar img {
+      max-width: 50px;
+      height: auto;
+    }
+    
+    .active {
+      color: yellow;
+    }
   }
   
